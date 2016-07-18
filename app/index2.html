@@ -1,0 +1,20 @@
+<div>
+    <!-- creating the search box -->
+    <div class="form-inline">
+        <input type="text" class="form-control" ng-model="vm.mName">
+        <button class="btn btn-primary" ng-click="vm.findMo(vm.mName)">Search</button>
+    </div>
+    <div class="row">
+        <div class="col-md-4" ng-repeat="record in vm.names.Search">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{record.Title}}</h3>
+            </div>
+            <div class="panel-body">
+                <img ng-src="{{record.Poster}}">
+                <p> Filmed in: {{record.Year}}</p>
+                <!-- router link to view on imdb -->
+                <a ui-sref="state({title:'{{record.Title'})">Click here</a>
+            </div>
+        </div>
+    </div>
+</div>

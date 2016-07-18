@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Movie Finder</h1>
+    <hr>
+    <!-- input search box -->
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" id="form-control" ng-model="vm.search" placeholder="Movie title">
+            <span class="input-group-btn">
+            <button class="btn btn-primary" ng-click="vm.searchM(vm.search)">Go!</button>
+            </span>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <!-- Outputs the results from the API -->
+    <div class="row">
+        <div class="col-lg-4" ng-repeat="record in vm.names.Search">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{record.Title}}</h3>
+                </div>
+                <div class="panel-body"><img ng-src="{{record.Poster}}" width="200" height="250">
+                    <p> Filmed in: {{record.Year}}</p>
+                    <a ui-sref="state2({title:'{{record.Title}}'})">Click here to view details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
